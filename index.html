@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Dev — Login & Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="auth-box" class="card">
+      <h2 id="form-title">Login</h2>
+
+      <form id="login-form">
+        <input type="text" id="emailOrUser" placeholder="Email or Username" required />
+        <div style="position:relative">
+          <input type="password" id="password" placeholder="Password" required />
+          <button id="show-pass" type="button" class="show-pass-btn">Show</button>
+        </div>
+        <label class="remember">
+          <input type="checkbox" id="remember" /> Remember me (auto login)
+        </label>
+        <button type="submit" class="primary">Login</button>
+      </form>
+
+      <form id="register-form" class="hidden">
+        <input type="text" id="reg-username" placeholder="Username" required />
+        <input type="email" id="reg-email" placeholder="Email" required />
+        <div style="position:relative">
+          <input type="password" id="reg-password" placeholder="Password" required />
+          <button id="show-pass-reg" type="button" class="show-pass-btn">Show</button>
+        </div>
+        <button type="submit" class="primary">Register</button>
+      </form>
+
+      <p id="switch-line" class="small">Don't have account? <a href="#" id="switch-link">Register</a></p>
+      <p id="msg" class="msg"></p>
+      <p class="small">Note: Data saved in <code>users.txt</code> on server (passwords hashed).</p>
+    </div>
+
+    <div id="dashboard" class="card hidden">
+      <h2>Welcome, <span id="user-name"></span></h2>
+      <p>You are logged in. Work smart & fast with me — contact for web development services.</p>
+      <p class="small">Demo dashboard</p>
+      <div style="display:flex;gap:8px;margin-top:12px">
+        <button id="logout" class="primary">Logout</button>
+        <button id="view-users" class="primary admin-btn">Show users (admin)</button>
+      </div>
+      <pre id="admin-output" class="small hidden"></pre>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
